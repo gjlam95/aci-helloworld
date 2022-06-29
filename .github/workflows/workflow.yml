@@ -20,15 +20,15 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-            docker build . -t oliveracr.azurecr.io/nodejssampleapp:${{ github.sha }}
-            docker push oliveracr.azurecr.io/nodejssampleapp:${{ github.sha }}
+            docker build . -t oliveracr.azurecr.io/oliveraci:${{ github.sha }}
+            docker push oliveracr.azurecr.io/oliveraci:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'
           with:
             resource-group: contoso
             dns-name-label: url-for-container
-            image: oliveracr.azurecr.io/nodejssampleapp:${{ github.sha }}
+            image: oliveracr.azurecr.io/oliveraci:${{ github.sha }}
             cpu: 2   #Optional
             memory: 1   #Optional
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
