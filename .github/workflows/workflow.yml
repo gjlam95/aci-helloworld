@@ -26,12 +26,12 @@ jobs:
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'
           with:
-            resource-group: contoso
+            resource-group: oliver-rg
             dns-name-label: url-for-container
             image: oliveracr.azurecr.io/oliveraci:${{ github.sha }}
             cpu: 2   #Optional
             memory: 1   #Optional
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-            name: contoso-container
+            name: oliver-container
             location: 'southeast asia'
