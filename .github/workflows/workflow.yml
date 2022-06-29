@@ -33,5 +33,5 @@ jobs:
             memory: 1   #Optional
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-            name: contoso-container
+            name: oliver-container
             location: 'southeast asia'
